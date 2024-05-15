@@ -1,0 +1,33 @@
+#addButton {
+    -fx-background-image: url(../icons/add.png);
+    -fx-content-display: graphic-only;
+    -fx-background-size: 20px 20px;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-position: center;
+}
+
+#editButton {
+    -fx-background-image: url(../icons/edit.png);
+    -fx-content-display: graphic-only;
+    -fx-background-size: 20px 20px;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-position: center;
+}
+
+#removeButton {
+    -fx-background-image: url(../icons/remove.png);
+    -fx-content-display: graphic-only;
+    -fx-background-size: 20px 20px;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-position: center;
+}
+
+#othersButton {
+    -fx-pref-height: 30px;
+}

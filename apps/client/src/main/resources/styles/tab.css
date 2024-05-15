@@ -1,0 +1,13 @@
+.tab-header-background {
+    -fx-background-color: #222831;
+}
+
+.tab:selected {
+    -fx-background-color: #454d5a;
+    -fx-text-base-color: #76abae;
+}
+
+.tab {
+    -fx-background-color: #31363F;
+    -fx-text-base-color: #eeeeee;
+}

@@ -1,0 +1,4 @@
+remove_key
+remove_key string
+remove_key 99999
+remove_key 2

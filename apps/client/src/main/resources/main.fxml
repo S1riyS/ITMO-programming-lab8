@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="903.0" style="-fx-background-color: #222831; -fx-padding: 0.333333em 1em 0.333333em 1em;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="s1riys.lab8.client.controllers.MainController">
+   <children>
+      <ComboBox fx:id="languageComboBox" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="113.0" promptText="Русский" stylesheets="@styles/languageComboBox.css" />
+      <Label fx:id="userLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="677.0" layoutY="16.0" prefHeight="22.0" prefWidth="213.0" text="S1riyS (ID: 150)" textAlignment="RIGHT" textFill="#76abae">
+         <font>
+            <Font name="Montserrat Medium" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="57.0" prefHeight="498.0" prefWidth="903.0" style="-fx-background-color: #31363F;">
+         <children>
+            <TabPane prefHeight="498.0" prefWidth="903.0" stylesheets="@styles/tab.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tableTab" text="Таблица">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="482.0" prefWidth="956.0">
+                           <children>
+                              <FlowPane alignment="CENTER_LEFT" hgap="8.0" layoutX="7.0" prefHeight="50.0" prefWidth="402.0" stylesheets="@styles/tableButtons.css">
+                                 <children>
+                                    <Button id="addButton" fx:id="addButton" alignment="BOTTOM_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="28.0" text="+" />
+                                    <Button id="editButton" fx:id="editButton" alignment="BOTTOM_LEFT" contentDisplay="CENTER" disable="true" layoutX="10.0" layoutY="18.0" mnemonicParsing="false" onAction="#edit" text="/" />
+                                    <Button id="removeButton" fx:id="removeButton" alignment="BOTTOM_LEFT" contentDisplay="CENTER" disable="true" layoutX="42.0" layoutY="18.0" mnemonicParsing="false" onAction="#remove" text="-" />
+                                    <MenuButton fx:id="othersButton" mnemonicParsing="false" text="Остальные">
+                                      <items>
+                                        <MenuItem fx:id="infoButton" mnemonicParsing="false" onAction="#info" text="Info" />
+                                          <MenuItem fx:id="clearButton" mnemonicParsing="false" onAction="#clear" text="Clear" />
+                                          <MenuItem fx:id="executeScriptButton" mnemonicParsing="false" onAction="#executeScript" text="Execure script" />
+                                          <MenuItem fx:id="removeGreaterButton" mnemonicParsing="false" onAction="#removeGreater" text="Remove Greater" />
+                                          <MenuItem fx:id="removeLowerButton" mnemonicParsing="false" onAction="#removeLower" text="Remove Lower" />
+                                          <MenuItem fx:id="removeGreaterKeyButton" mnemonicParsing="false" onAction="#removeGreaterKey" text="RemoveGreaterKey" />
+                                      </items>
+                                    </MenuButton>
+                                 </children>
+                              </FlowPane>
+                              <TableView fx:id="tableView" layoutY="75.2" prefHeight="395.0" prefWidth="903.0" style="-fx-background-color: #222831;" stylesheets="@styles/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                                <columns>
+                                  <TableColumn fx:id="ownerIdColumn" prefWidth="100.0" text="Owner ID" />
+                                  <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="125.0" text="Name" />
+                                    <TableColumn prefWidth="50.0" text="X" fx:id="xColumn" />
+                                    <TableColumn fx:id="yColumn" prefWidth="50.0" text="Y" />
+                                    <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Creation Date" />
+                                    <TableColumn fx:id="priceColumn" prefWidth="65.0" text="Price" />
+                                    <TableColumn fx:id="partNumberColumn" prefWidth="120.0" text="Part Number" />
+                                    <TableColumn fx:id="unitOfMeasureColumn" prefWidth="150.0" text="Unit of measure" />
+                                    <TableColumn fx:id="manufacturerIdColumn" prefWidth="75.0" text="Mfq ID" />
+                                    <TableColumn fx:id="manufacturerNameColumn" prefWidth="99.9998779296875" text="Mfq Name" />
+                                    <TableColumn fx:id="manufacturerFullNameColumn" prefWidth="125.0" text="Mfq Full Name" />
+                                    <TableColumn fx:id="manufacturerAnnualTurnoverColumn" prefWidth="150.0" text="Mfq Annual Turnover" />
+                                    <TableColumn fx:id="manufacturerEmployeesCountColumn" prefWidth="150.0" text="Mfq Employees Count" />
+                                </columns>
+                              </TableView>
+                              <FlowPane alignment="CENTER_RIGHT" layoutX="493.0" prefHeight="50.0" prefWidth="402.0" stylesheets="@styles/tableButtons.css">
+                                 <children>
+                                    <TextField fx:id="filterField" prefHeight="30.0" prefWidth="220.0" promptText="Filter">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ComboBox fx:id="filterColumnComboBox" prefHeight="29.0" prefWidth="150.0" />
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="visualizationTab" text="Визуализация">
+                  <content>
+                    <AnchorPane fx:id="visualPane" minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="901.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <Label fx:id="mainTitleLabel" layoutX="294.0" layoutY="21.0" text="Управление продуктами" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
